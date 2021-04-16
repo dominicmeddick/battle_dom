@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Testing infrastructure' do
   scenario 'Can run app and check page content' do
     visit('/')
@@ -16,5 +18,12 @@ feature 'See Player 2 hitpoints' do
   scenario 'player 1 can see player 2 hitpoints' do
     sign_in_and_play
     expect(page).to have_content '10HP'
+  end
+end
+
+feature 'Confirmation of attack' do
+  scenario 'Player 1 attacks Player 2' do
+    sign_in_and_play
+    expect(page).to have_content 
   end
 end
